@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+		
+       String s = sc.next();
+		int n=sc.nextInt();
+		int a=0,k,l;
+        int[] arr1=new int[n];
+        int[] arr=new int[s.length()];
+		
+		//taking input
+		
+		for(k=0;k<n;k++){
+		  arr1[k]=sc.nextInt();
+	  }
+		arr[0]=(int)s.charAt(0)%96;
+		   for(int i=1;i<s.length();i++)
+			{
+                if(s.charAt(i)==s.charAt(i-1)){
+                    arr[i]=(int)s.charAt(i)%96 + arr[i-1];
+                   }
+                else{
+					arr[i]=(int)s.charAt(i)%96; 
+				}
+            }
+		for(k=0;k<n;k++){
+			a=0;
+			for(l=0;l<s.length();l++){
+			   if(arr1[k]==arr[l]){
+				System.out.println("Yes");
+				a=1;
+				break;
+			   }
+			}
+			if(a==0){
+				System.out.println("No");
+			}
+		 
+		}
+   
+    }
+}
