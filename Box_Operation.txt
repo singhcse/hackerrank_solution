@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+class Solution{
+
+// func 1
+static void one(long[] arr,int l, int r,int c){
+for(int z=l;z<=r;z++)
+ arr[z]+=c;
+
+}
+
+//func 2
+static void two(long[] arr,int l,int r,long d){
+for(int z=l;z<=r;z++){
+ if((arr[z]<0) && (arr[z]%d != 0))
+ arr[z]=((long)arr[z]/d)-1;
+
+
+ 
+ else
+ arr[z]=((long)arr[z]/d);
+
+}
+}
+
+//func 3
+
+static void three(long[] arr,int l,int r){
+long min=arr[l];
+for(int z=l;z<=r;z++){
+if(arr[z]<min)
+min=arr[z];
+}
+System.out.println(min);
+
+}
+
+//func 4
+
+static void four(long[] arr,int l,int r){
+int sum=0;
+for(int z=l;z<=r;z++){
+sum+=arr[z];
+}
+System.out.println(sum);
+
+}
+
+
+public static void main(String []arg){
+Scanner sc=new Scanner(System.in);
+int i,j,k,l,m,n,z,c;
+n=sc.nextInt();
+int a,r;
+long d;
+long[] arr=new long[n];
+
+int q=sc.nextInt();
+
+// array input
+for(i=0;i<n;i++){
+arr[i]=sc.nextLong();
+}
+
+// queries
+while(q>0){
+a=sc.nextInt();
+l=sc.nextInt();
+r=sc.nextInt();
+
+
+if(a==1){
+c=sc.nextInt();
+one(arr,l,r,c);
+}
+
+else if(a==2){
+d=sc.nextLong();
+two(arr,l,r,d);
+}
+
+else if(a==3){
+three(arr,l,r);
+
+}
+
+else{
+four(arr,l,r);
+}
+q--;
+}
+
+
+}
+
+}
