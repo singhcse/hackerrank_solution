@@ -1,2 +1,2 @@
 # hackerrank_solution
-Hackerrank CodeSprint 9 Solution
+This include various solutions of hackerrank problems
